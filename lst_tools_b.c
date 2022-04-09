@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:48:19 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/04/07 18:01:41 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/04/09 16:42:49 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,17 @@ t_stack_b	*ft_lstlast_b(t_stack_b *lst)
 	return (last);
 }
 
-void	ft_lstdelone_b(t_stack_b *lst)
+int	ft_lstsize_b(t_stack_b *lst)
 {
-	if (lst)
+	int			size;
+	t_stack_b	*temp;
+
+	size = 0;
+	temp = lst;
+	while (temp)
 	{
-		free(lst);
+		size++;
+		temp = temp->next_b;
 	}
-	return ;
+	return (size);
 }

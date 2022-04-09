@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 18:17:37 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/04/07 19:55:22 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/04/09 16:44:31 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void		ft_lstadd_back_b(t_stack_b **lst, t_stack_b *new);
 void		ft_lstadd_front(t_stack_a **lst, t_stack_a *new);
 void		ft_lstadd_front_b(t_stack_b **lst, t_stack_b *new);
 int			ft_lstsize(t_stack_a *lst);
+int			ft_lstsize_b(t_stack_b *lst);
 t_stack_a	*ft_lstlast(t_stack_a *lst);
 t_stack_b	*ft_lstlast_b(t_stack_b *lst);
 void		free_list_a(t_stack_a *head);
@@ -55,6 +56,8 @@ void		ft_rev_rotate_a(t_stack_a **list);
 void		ft_lstdelone_a(t_stack_a *lst);
 void		ft_lstdelone_b(t_stack_b *lst);
 void		ft_push_a(t_stack_a **list_a, t_stack_b **list_b);
-void		ft_push_b(t_stack_a **list_b, t_stack_b **list_a);
+void		ft_push_b(t_stack_b **list_b, t_stack_a **list_a);
+void		ft_rev_rotate_b(t_stack_b **list);
+void		ft_rev_rotate_a(t_stack_a **list);
 
 #endif

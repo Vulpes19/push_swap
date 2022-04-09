@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:07:46 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/04/07 21:07:08 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/04/09 16:28:27 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,24 +51,17 @@ void	ft_rotate_a(t_stack_a **list)
 void	ft_rev_rotate_a(t_stack_a **list)
 {
 	t_stack_a	*head;
-	t_stack_a	*last;
-	int			tmp;
-	int			index;
-	int			tmp2;
+	t_stack_a	*tmp;
 
 	head = *list;
-	last = ft_lstlast(head);
-	tmp = last->content;
-	index = tmp;
-	tmp2 = head->content;
-	head->content = tmp;
-	while (head->next->content != index)
+	tmp = *list;
+	if (head && ft_lstsize(*list) > 1)
 	{
-		tmp = head->content;
-		head = head->next;
-		tmp2 = head->content;
-		head->next->content = tmp;
-		head = head->next;
+		while (tmp->next->next)
+			tmp = tmp->next;
+		head = tmp->next;
+		tmp->next = NULL;
+		ft_lstadd_front(list, head);
 	}
 }
 

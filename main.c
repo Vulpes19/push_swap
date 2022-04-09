@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 18:17:27 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/04/07 20:41:30 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/04/09 17:00:10 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,13 @@ int	main(int ac, char **av)
 
 	i = 0;
 	stack_a = NULL;
-	ft_lstadd_front_b(&stack_b, ft_lstnew_b(5));
+	// ft_lstadd_front_b(&stack_b, ft_lstnew_b(5));
 	stack_a = ft_parse_parameters(stack_a, av, ac);
 	ft_print_lst_a(stack_a);
-	// ft_print_lst_b(stack_b);
-	// ft_rotate_a(&stack_a);
-	ft_rev_rotate_a(&stack_a);
-	// ft_push_a(&stack_a, &stack_b);
+	ft_push_b(&stack_b, &stack_a);
 	ft_printf("======\n");
 	ft_print_lst_a(stack_a);
-	free_list_a(stack_a);
+	ft_print_lst_b(stack_b);
+	// free_list_a(stack_a);
 	return (0);
 }
