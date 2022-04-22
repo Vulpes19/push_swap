@@ -6,17 +6,17 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:23:22 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/04/07 18:01:09 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/04/19 16:06:38 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
 
-t_stack_a	*ft_lstnew(int content)
+t_stack	*ft_lstnew(int content)
 {
-	t_stack_a	*head;
+	t_stack	*head;
 
-	head = (t_stack_a *)malloc(sizeof(t_stack_a));
+	head = (t_stack *)malloc(sizeof(t_stack));
 	if (!head)
 		return (NULL);
 	head->content = content;
@@ -24,9 +24,9 @@ t_stack_a	*ft_lstnew(int content)
 	return (head);
 }
 
-void	ft_lstadd_back(t_stack_a **lst, t_stack_a *new)
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_stack_a	*last;
+	t_stack	*last;
 
 	if (!new)
 		return ;
@@ -39,7 +39,7 @@ void	ft_lstadd_back(t_stack_a **lst, t_stack_a *new)
 	last->next = new;
 }
 
-void	ft_lstadd_front(t_stack_a **lst, t_stack_a *new)
+void	ft_lstadd_front(t_stack **lst, t_stack *new)
 {
 	if (lst == NULL && new == NULL)
 		return ;
@@ -49,9 +49,9 @@ void	ft_lstadd_front(t_stack_a **lst, t_stack_a *new)
 	*lst = new;
 }
 
-t_stack_a	*ft_lstlast(t_stack_a *lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	t_stack_a	*last;
+	t_stack	*last;
 
 	last = lst;
 	if (last == NULL)
@@ -63,10 +63,10 @@ t_stack_a	*ft_lstlast(t_stack_a *lst)
 	return (last);
 }
 
-int	ft_lstsize(t_stack_a *lst)
+int	ft_lstsize(t_stack *lst)
 {
 	int			size;
-	t_stack_a	*temp;
+	t_stack		*temp;
 
 	size = 0;
 	temp = lst;
@@ -76,13 +76,4 @@ int	ft_lstsize(t_stack_a *lst)
 		temp = temp->next;
 	}
 	return (size);
-}
-
-void	ft_lstdelone_a(t_stack_a *lst)
-{
-	if (lst)
-	{
-		free(lst);
-	}
-	return ;
 }

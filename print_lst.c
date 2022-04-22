@@ -6,13 +6,13 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:20:40 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/04/09 16:55:17 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/04/22 17:00:47 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
 
-void	ft_print_lst_a(t_stack_a *lst)
+void	ft_print_lst_a(t_stack *lst)
 {
 	ft_printf("---\n");
 	while (lst)
@@ -24,13 +24,13 @@ void	ft_print_lst_a(t_stack_a *lst)
 	ft_printf("a\n");
 }
 
-void	ft_print_lst_b(t_stack_b *lst)
+void	ft_print_lst_b(t_stack *lst)
 {
 	ft_printf("---\n");
 	while (lst)
 	{
-		ft_printf("%d |\n", lst->content_b);
-		lst = lst->next_b;
+		ft_printf("%d |\n", lst->content);
+		lst = lst->next;
 	}
 	ft_printf("---\n");
 	ft_printf("b\n");

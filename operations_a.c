@@ -6,16 +6,16 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:07:46 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/04/09 16:28:27 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/04/19 16:23:15 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
 
-void	ft_swap_a(t_stack_a **list)
+void	ft_swap_a(t_stack **list)
 {
-	t_stack_a	*curr1;
-	t_stack_a	*curr2;
+	t_stack		*curr1;
+	t_stack		*curr2;
 	int			tmp;
 
 	curr1 = *list;
@@ -26,12 +26,12 @@ void	ft_swap_a(t_stack_a **list)
 	ft_printf("sa\n");
 }
 
-void	ft_rotate_a(t_stack_a **list)
+void	ft_rotate_a(t_stack **list)
 {
 	int			tmp;
-	t_stack_a	*top;
-	t_stack_a	*lst;
-	t_stack_a	*bottom;
+	t_stack		*top;
+	t_stack		*lst;
+	t_stack		*bottom;
 
 	top = *list;
 	tmp = top->content;
@@ -48,10 +48,10 @@ void	ft_rotate_a(t_stack_a **list)
 	ft_printf("ra\n");
 }
 
-void	ft_rev_rotate_a(t_stack_a **list)
+void	ft_rev_rotate_a(t_stack **list)
 {
-	t_stack_a	*head;
-	t_stack_a	*tmp;
+	t_stack		*head;
+	t_stack		*tmp;
 
 	head = *list;
 	tmp = *list;
@@ -63,26 +63,22 @@ void	ft_rev_rotate_a(t_stack_a **list)
 		tmp->next = NULL;
 		ft_lstadd_front(list, head);
 	}
+	ft_printf("rra\n");
 }
 
-void	ft_push_a(t_stack_a **list_a, t_stack_b **list_b)
+void	ft_push_a(t_stack **list_a, t_stack **list_b)
 {
-	t_stack_a	*lst_a;
-	t_stack_b	*lst_b;
-	t_stack_b	*lst2_b;
+	t_stack		*lst_a;
+	t_stack		*lst_b;
 
 	lst_b = *list_b;
-	lst_a = ft_lstnew(lst_b->content_b);
+	lst_a = ft_lstnew(lst_b->content);
 	if (lst_b)
 	{
-		if (lst_b->next_b == NULL)
-			free(lst_b);
+		if (lst_b->next == NULL)
+			free(*list_b);
 		else
-		{
-			lst2_b = lst_b;
-			lst_b = lst_b->next_b;
-			free(lst2_b);
-		}
+			*list_b = lst_b->next;
 	}
 	if (*list_a)
 	{
