@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 18:17:37 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/04/22 16:48:22 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/09 18:02:22 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,17 @@ typedef struct s_stack
 
 typedef struct s_var
 {
-	int	lst_size;
-	int	smallest_nbr;
-	int	index;
-	int	hold_first;
-	int	hold_second;
-	int	i;
-	int	j;
+	int		*sorted_nbrs;
+	int		*nbrs;
+	t_stack	*head;
+	int		size;
+	int		top_nbr;
+	int		max_nbr;
+	int		max_bits;
+	int		index;
+	int		smallest_nbr;
+	int		i;
+	int		j;
 }				t_var;
 
 t_stack		*ft_lstnew(int content);
@@ -60,5 +64,20 @@ void		ft_sort_four_nbrs(t_stack **list_a, t_stack **list_b, t_var *var);
 void		ft_sort_five_nbrs(t_stack **list_a, t_stack **list_b, t_var *var);
 void		ft_find_smallest_nbr(t_stack *stack, t_var *var);
 void		ft_find_index(t_stack *stack, t_var *var);
+int			ft_rev_check_chunk1(t_stack *list, t_var *var);
+int			ft_rev_check_chunk2(t_stack *list, t_var *var);
+int			ft_rev_check_chunk3(t_stack *list, t_var *var);
+int			ft_rev_check_chunk4(t_stack *list, t_var *var);
+int			ft_rev_check_chunk5(t_stack *list, t_var *var);
+int			ft_check_chunk1(t_stack *list, t_var *var);
+int			ft_check_chunk2(t_stack *list, t_var *var);
+int			ft_check_chunk3(t_stack *list, t_var *var);
+int			ft_check_chunk4(t_stack *list, t_var *var);
+int			ft_check_chunk5(t_stack *list, t_var *var);
+void		ft_run_rra(t_stack **list_a, t_var *var);
+void		ft_run_ra(t_stack **list_a, t_var *var);
+void		ft_sort_nbrs(t_stack **list_a, t_stack **list_b, t_var *var);
+void		ft_simple_nbrs(t_stack **list);
+void		ft_bit_op(t_stack **list_a, t_stack **list_b);
 
 #endif

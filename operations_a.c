@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:07:46 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/04/19 16:23:15 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:50:37 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,22 +68,13 @@ void	ft_rev_rotate_a(t_stack **list)
 
 void	ft_push_a(t_stack **list_a, t_stack **list_b)
 {
-	t_stack		*lst_a;
-	t_stack		*lst_b;
+	t_stack	*temp;
+	t_stack	*stack_b;
 
-	lst_b = *list_b;
-	lst_a = ft_lstnew(lst_b->content);
-	if (lst_b)
-	{
-		if (lst_b->next == NULL)
-			free(*list_b);
-		else
-			*list_b = lst_b->next;
-	}
-	if (*list_a)
-	{
-		lst_a->next = *list_a;
-		*list_a = lst_a;
-	}
+	stack_b = *list_b;
+	temp = *list_b;
+	*list_b = stack_b->next;
+	temp->next = NULL;
+	ft_lstadd_front(list_a, temp);
 	ft_printf("pa\n");
 }

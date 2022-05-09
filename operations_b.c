@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 14:58:22 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/04/19 16:19:58 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:50:48 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,43 +69,13 @@ void	ft_rev_rotate_b(t_stack **list)
 
 void	ft_push_b(t_stack **list_b, t_stack **list_a)
 {
-	t_stack	*lst_b;
-	t_stack	*lst_a;
+	t_stack	*temp;
+	t_stack	*stack_a;
 
-	lst_a = *list_a;
-	lst_b = ft_lstnew(lst_a->content);
-	if (ft_lstsize(*list_b) == 0)
-	{
-		lst_b->next = NULL;
-		*list_b = lst_b;
-		if (lst_a)
-		{
-			if (lst_a->next == NULL)
-				free(*list_a);
-			else
-			{
-				// lst2_a = lst_a;
-				*list_a = lst_a->next;
-				// lst_a = lst_a->next;
-			}
-		}
-		return ;
-	}
-	if (lst_a)
-	{
-		if (lst_a->next == NULL)
-			free(*list_a);
-		else
-		{
-			*list_a = lst_a->next;
-			// lst2_a = lst_a;
-			// lst_a = lst_a->next;
-			// free(lst2_a);
-		}
-	}
-	if (*list_b)
-	{
-		lst_b->next = *list_b;
-		*list_b = lst_b;
-	}
+	stack_a = *list_a;
+	temp = *list_a;
+	*list_a = stack_a->next;
+	temp->next = NULL;
+	ft_lstadd_front(list_b, temp);
+	ft_printf("pb\n");
 }

@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 18:17:27 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/04/20 21:07:45 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/09 18:39:18 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,24 @@ int	main(int ac, char **av)
 	t_stack		*stack_b;
 	t_var		var;
 
+	if (ac < 2)
+		return (0);
 	stack_a = NULL;
 	ft_parse_parameters(&stack_a, av, ac);
 	ft_find_smallest_nbr(stack_a, &var);
 	if (ft_check_same_nbr(stack_a))
 	{
-		ft_print_lst_a(stack_a);
 		if (ft_lstsize(stack_a) == 3)
 			ft_sort_three_nbrs(&stack_a);
 		else if (ft_lstsize(stack_a) == 4)
 			ft_sort_four_nbrs(&stack_a, &stack_b, &var);
-		else
+		else if (ft_lstsize(stack_a) == 5)
 			ft_sort_five_nbrs(&stack_a, &stack_b, &var);
-		ft_printf("======\n");
-		ft_print_lst_a(stack_a);
+		else
+		{
+			ft_simple_nbrs(&stack_a);
+			ft_bit_op(&stack_a, &stack_b);
+		}
 	}
 	free_list(stack_a);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 17:07:17 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/04/20 22:10:19 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:58:40 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int	ft_check_same_nbr(t_stack *head)
 		while (list != NULL)
 		{
 			if (head->content == list->content)
+			{
+				ft_printf("Error");
 				return (0);
+			}
 			list = list->next;
 		}
 		head = head->next;

@@ -5,9 +5,9 @@ MINI = mini_libft
 LIBPRINTF = ft_printf/libftprintf.a
 MINILIBFT = mini_libft/minilibft.a
 MAIN = main.c
-SRC = free_list.c lst_tools_a.c additional_func.c sorting_func.c ft_atoi.c parsing.c print_lst.c operations_a.c operations_b.c
+SRC = free_list.c lst_tools_a.c sorting_func.c bitwise_op.c additional_func.c simplify_nbrs.c ft_atoi.c parsing.c print_lst.c operations_a.c operations_b.c
 OBJS = $(SRC:.c=.o)
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 DEL = rm -f
 
 all: $(NAME)
