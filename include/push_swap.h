@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 18:17:37 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/05/09 18:02:22 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:12:38 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ void		ft_run_rra(t_stack **list_a, t_var *var);
 void		ft_run_ra(t_stack **list_a, t_var *var);
 void		ft_sort_nbrs(t_stack **list_a, t_stack **list_b, t_var *var);
 void		ft_simple_nbrs(t_stack **list);
+int			ft_atoi(char *str);
 void		ft_bit_op(t_stack **list_a, t_stack **list_b);
+int			ft_sort_three_b(t_stack **list, t_stack *last);
 
 #endif

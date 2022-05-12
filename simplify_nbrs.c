@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:38:04 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/05/09 18:37:37 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/11 20:59:29 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ void	ft_simple_nbrs(t_stack **list)
 	{
 		var.nbrs[var.i] = var.head->content;
 		var.sorted_nbrs[var.i] = var.head->content;
-		// ft_printf("%d\n", var.nbrs[var.i]);
 		var.head = var.head->next;
 		var.i++;
 	}

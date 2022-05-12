@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:11:11 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/05/09 18:31:26 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/11 20:55:34 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,20 @@ static	int	ft_is_sorted(t_stack *stack_a)
 	return (0);
 }
 
+static void	ft_variables(t_var *var, t_stack *stack_a)
+{
+	var->i = 0;
+	var->j = 0;
+	var->size = ft_lstsize(stack_a);
+}
+
 void	ft_bit_op(t_stack **list_a, t_stack **list_b)
 {
 	t_var	var;
 	t_stack	*stack_a;
 
-	var.i = 0;
-	var.j = 0;
+	ft_variables(&var, *list_a);
 	stack_a = *list_a;
-	var.size = ft_lstsize(*list_a);
-	var.max_nbr = var.size - 1;
-	var.max_bits = 0;
 	while (ft_is_sorted(*list_a) || (*list_b))
 	{
 		var.j = 0;

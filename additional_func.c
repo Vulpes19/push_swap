@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 17:07:17 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/05/09 17:58:40 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:16:18 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_check_same_nbr(t_stack *head)
 		list = head->next;
 		while (list != NULL)
 		{
-			if (head->content == list->content)
+			if (head->content == list->content && list->content > 2147483647)
 			{
 				ft_printf("Error");
 				return (0);
