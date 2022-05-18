@@ -6,13 +6,13 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:11:11 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/05/11 20:55:34 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/17 18:40:50 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
 
-static	int	ft_is_sorted(t_stack *stack_a)
+int	ft_is_sorted(t_stack *stack_a)
 {
 	while (stack_a->next)
 	{

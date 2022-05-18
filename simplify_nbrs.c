@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:38:04 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/05/11 20:59:29 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/13 14:51:00 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,6 @@ void	ft_simple_nbrs(t_stack **list)
 	var.sorted_nbrs = ft_bubble_sort(var.sorted_nbrs, var.size);
 	var.i = 0;
 	ft_replace_nbrs(list, var.sorted_nbrs);
+	free(var.nbrs);
+	free(var.sorted_nbrs);
 }

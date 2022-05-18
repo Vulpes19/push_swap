@@ -6,14 +6,12 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 18:17:37 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/05/11 13:12:38 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:59:24 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# define FOUND 1
-# define NOT_FOUND 0
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -46,7 +44,7 @@ void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
 t_stack		*ft_lstlast(t_stack *lst);
 int			ft_lstsize(t_stack *lst);
-t_stack		**ft_parse_parameters(t_stack **lst, char **av, int ac);
+t_stack		**ft_parse_parameters(t_stack **lst, char **av);
 int			ft_check_same_nbr(t_stack *list);
 void		ft_print_lst_a(t_stack *lst);
 void		ft_print_lst_b(t_stack *lst);
@@ -57,6 +55,7 @@ void		ft_swap_b(t_stack **list);
 void		free_list(t_stack *head);
 void		ft_rev_rotate_a(t_stack **list);
 void		ft_rev_rotate_b(t_stack **list);
+int			ft_is_sorted(t_stack *stack_a);
 void		ft_push_a(t_stack **list_a, t_stack **list_b);
 void		ft_push_b(t_stack **list_b, t_stack **list_a);
 void		ft_sort_three_nbrs(t_stack **list);
@@ -81,5 +80,6 @@ void		ft_simple_nbrs(t_stack **list);
 int			ft_atoi(char *str);
 void		ft_bit_op(t_stack **list_a, t_stack **list_b);
 int			ft_sort_three_b(t_stack **list, t_stack *last);
+void		ft_error(void);
 
 #endif

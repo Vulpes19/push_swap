@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 18:17:27 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/05/11 20:56:38 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:58:29 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	main(int ac, char **av)
 	t_var		var;
 
 	if (ac < 2)
-		return (0);
+		ft_error();
 	stack_a = NULL;
-	ft_parse_parameters(&stack_a, av, ac);
+	ft_parse_parameters(&stack_a, av);
 	ft_find_smallest_nbr(stack_a, &var);
 	if (ft_check_same_nbr(stack_a))
 	{
