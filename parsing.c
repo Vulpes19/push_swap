@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:52:27 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/05/18 21:09:39 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/21 10:54:38 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,9 @@ static int	is_valid(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if ((str[i] <= '9' && str[i] >= 0) || str[i] == '-' || str[i] == '+')
-		{
-			if ((str[i] == '-' || str[i] == '+') && i != 0)
-				return (0);
-			i++;
-		}
+		if ((str[i] == '-' || str[i] == '+') && i != 0)
+			ft_error();
+		i++;
 	}
 	return (1);
 }

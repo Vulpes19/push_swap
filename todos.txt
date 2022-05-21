@@ -1,3 +1,0 @@
-1: non integer numbers
-2: max and min int overflow
-3: 

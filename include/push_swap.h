@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 18:17:37 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/05/18 19:59:24 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/19 16:47:32 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "../ft_printf/ft_printf.h"
-# include "mini_libft.h"
 
 typedef struct s_stack
 {
@@ -37,6 +36,9 @@ typedef struct s_var
 	int		smallest_nbr;
 	int		i;
 	int		j;
+	int		k;
+	long	result;
+	int		sign;
 }				t_var;
 
 t_stack		*ft_lstnew(int content);

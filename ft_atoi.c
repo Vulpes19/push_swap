@@ -6,11 +6,11 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:05 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/05/18 19:59:04 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/21 10:53:33 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/mini_libft.h"
+#include "include/push_swap.h"
 #include "ft_printf/ft_printf.h"
 
 void	ft_error(void)
@@ -29,29 +29,29 @@ int	ft_isdigit(int c)
 
 int	ft_atoi(char *str)
 {
-	int					i;
-	long				result;
-	int					sign;
+	t_var	var;
 
-	result = 0;
-	i = 0;
-	sign = 1;
-	if (!(str[i] == 43) && !(str[i] == 45)
-		&& (!(str[i] >= 48 && str[i] <= 57)))
+	var.result = 0;
+	var.k = 0;
+	var.sign = 1;
+	if (!(str[var.k] == 43) && !(str[var.k] == 45)
+		&& (!(str[var.k] >= 48 && str[var.k] <= 57)))
 		ft_error();
-	if (str[i] == '-' || str[i] == '+')
+	if (str[var.k] == '-' || str[var.k] == '+')
 	{
-		if (str[i++] == '-')
-			sign = -1;
+		if (str[var.k++] == '-')
+			var.sign = -1;
 	}
-	while (str[i] && ft_isdigit(str[i]) == 1)
+	while (str[var.k] && ft_isdigit(str[var.k]) == 1)
 	{
-		if (!(str[i + 1] == 43) && !(str[i + 1] == 45)
-			&& (!(str[i + 1] >= 48 && str[i + 1] <= 57)) && str[i + 1] != 0)
+		if (!(str[var.k + 1] == 43) && !(str[var.k + 1] == 45)
+			&& (!(str[var.k + 1] >= 48 && str[var.k + 1] <= 57))
+			&& str[var.k + 1] != 0)
 			ft_error();
-		result = (result * 10) + str[i++] - 48;
+		var.result = (var.result * 10) + str[var.k++] - 48;
 	}
-	if (result > 2147483647 || result < -2147483648)
+	var.result *= var.sign;
+	if (var.result > 2147483647 || var.result < -2147483648)
 		ft_error();
-	return (result * sign);
+	return (var.result);
 }

@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:38:04 by abaioumy          #+#    #+#             */
-/*   Updated: 2022/05/13 14:51:00 by abaioumy         ###   ########.fr       */
+/*   Updated: 2022/05/19 15:23:41 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ static	int	*ft_bubble_sort(int *nbrs, int size)
 		}
 		i++;
 	}
+	i = 0;
 	return (nbrs);
 }
 
@@ -52,16 +53,18 @@ static	void	ft_replace_nbrs(t_stack **list, int	*sorted_nbrs)
 	i = 0;
 	stack_a = *list;
 	head = stack_a;
-	while (i < ft_lstsize(*list))
+	while (stack_a)
 	{
 		j = 0;
 		while (j < ft_lstsize(*list))
 		{
 			if (stack_a->content == sorted_nbrs[j])
+			{
 				stack_a->content = j;
+				break ;
+			}
 			j++;
 		}
-		i++;
 		stack_a = stack_a->next;
 	}
 	*list = head;
