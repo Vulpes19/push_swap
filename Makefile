@@ -18,9 +18,6 @@ $(NAME): $(LIBPRINTF) $(OBJS) $(HEADER)
 $(LIBPRINTF):
 	$(MAKE) -C $(PRINTF)
 
-$(MINILIBFT):
-	$(MAKE) -C $(MINI)
-
 clean:
 	$(DEL) $(OBJS)
 	$(MAKE) -C $(PRINTF) clean
